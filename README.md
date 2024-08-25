@@ -1,0 +1,44 @@
+1. Instale as dependências
+   Primeiramente, instale as dependências necessárias:
+   ```bash
+   sudo apt update
+   sudo apt install python3-dev build-essential libssl-dev libxml2-dev libxslt1-dev zlib1g-dev libjpeg-dev libreadline-dev libbz2-dev libsqlite3-dev libffi-dev libyaml-dev python3-venv
+   ```
+
+2. Crie um ambiente virtual Python
+   Crie um ambiente virtual para isolar a instalação do Plone:
+   ```bash
+   python3 -m venv plone_env
+   ```
+
+   Ative o ambiente virtual:
+   ```bash
+   source plone_env/bin/activate
+   ```
+
+3. Instale o Plone usando `pip`
+   Com o ambiente virtual ativado, use o `pip` para instalar o Plone:
+   ```bash
+   pip install Plone
+   ```
+
+4. Crie um site Plone
+   Depois que o Plone estiver instalado, você pode criar um novo site Plone usando o comando:
+   ```bash
+   mkwsgiinstance -d myplone
+   ```
+
+   Entre no diretório criado:
+   ```bash
+   cd myplone
+   ```
+
+   Inicie o Plone:
+   ```bash
+   bin/wsgi serve
+   ```
+
+   O Plone agora deve estar acessível em `http://localhost:8080`.
+
+5. Configuração adicional
+   Para configurar o Plone e adicionar um site Plone, acesse `http://localhost:8080` no navegador e siga as instruções.
