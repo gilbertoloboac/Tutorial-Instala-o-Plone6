@@ -42,3 +42,32 @@
 
 5. Configuração adicional
    Para configurar o Plone e adicionar um site Plone, acesse `http://localhost:8080` no navegador e siga as instruções.
+
+   /////// Instalando via Docker (alternativa)
+Se preferir uma instalação mais simplificada, você pode utilizar Docker. Isso evita problemas com a instalação manual:
+
+Ps.: Instale Docker e Docker Compose:
+
+bash
+Copiar código
+sudo apt install docker.io docker-compose
+Crie um arquivo docker-compose.yml com o seguinte conteúdo:
+
+yaml
+Copiar código
+version: '3'
+services:
+  plone:
+    image: plone
+    ports:
+      - "8080:8080"
+    environment:
+      - SITE=Plone
+      - SITE_ADMIN=admin
+      - SITE_PASSWORD=admin
+Inicie o Plone:
+
+bash
+Copiar código
+docker-compose up
+Com Docker, o Plone será acessível em http://localhost:8080.
